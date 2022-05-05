@@ -1,0 +1,78 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+/* offer */
+
+.offer-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  /* z-index: 1; */
+}
+
+img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  z-index: -1;
+}
+
+.search-box {
+  /* float: left; */
+  position: absolute;
+  z-index: 1;
+  background-color: #92ad40;
+  padding: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.offer-content {
+  position: absolute;
+  z-index: 1;
+  background-color: #92ad40;
+  padding: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+button {
+  float: center;
+  position: absolute;
+  z-index: 1;
+  background-color: #92ad40;
+  padding: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.classes-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.personal-trainer-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
