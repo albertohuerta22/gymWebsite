@@ -1,0 +1,40 @@
+.navbar-container {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+
+  justify-content: space-between;
+  text-align: center;
+
+  background-color: #000;
+  // color: white;
+
+  .navbar-logo {
+    color: white;
+    font-weight: bold;
+    padding-top: 1.5rem;
+    margin-left: 2rem;
+  }
+
+  .link-container {
+    display: flex;
+    justify-content: right;
+    text-align: center;
+
+    .links {
+      display: inline-block;
+      padding-top: 1.5rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+
+      a:visited {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+//ajust style to window breakpoints
