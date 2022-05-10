@@ -1,8 +1,9 @@
 .navbar-container {
+  position: fixed;
   width: 100%;
   height: 5rem;
   display: flex;
-
+  z-index: 1000;
   justify-content: space-between;
   text-align: center;
 
@@ -14,6 +15,53 @@
     font-weight: bold;
     padding-top: 1.5rem;
     margin-left: 2rem;
+    a {
+      color: white;
+    }
+  }
+
+  .link-container {
+    display: flex;
+    justify-content: right;
+    text-align: center;
+
+    .links {
+      display: inline-block;
+      padding-top: 1.5rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+
+      a:visited {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.navbar-container-alt {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+
+  justify-content: space-between;
+  text-align: center;
+
+  background-color: rgb(40, 39, 39);
+  // color: white;
+
+  .navbar-logo {
+    color: white;
+    font-weight: bold;
+    padding-top: 1.5rem;
+    margin-left: 2rem;
+    text-decoration: none;
+    a {
+      color: white;
+    }
   }
 
   .link-container {
@@ -38,3 +86,10 @@
 }
 
 //ajust style to window breakpoints
+a,
+a:visited,
+a:link,
+a:active,
+a:hover {
+  text-decoration: none;
+}

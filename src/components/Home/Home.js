@@ -48,7 +48,9 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-
+      <div className="classes-container">
+        <p>Curious About Our Classes?</p>
+      </div>
       <div className="story">
         <h1>Above The Rest</h1>
         <p>

@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 
 const Navbar = () => {
+  const [nav, setNav] = useState(false);
+  const [color, setColor] = useState(false);
+
+  const handleClick = () => setNav(!nav);
+  const changeColor = () => {
+    window.scrollY ? setColor(true) : setColor(false);
+  };
+
+  window.addEventListener('scroll', changeColor);
+
   return (
-    <div className="navbar-container">
-      <div className="navbar-logo">LOGO</div>
+    <div className={!color ? 'navbar-container' : 'navbar-container-alt'}>
+      <div className="navbar-logo">
+        <Link to="/home">CITY HEALTH CLUB</Link>
+      </div>
       <div className="link-container">
         <Link className="links" to="/home">
           Home

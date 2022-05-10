@@ -6,6 +6,8 @@ import PersonalTraining from './components/PersonalTraining/PersonalTraining';
 import Classes from './components/Classes/Classes';
 import Contact from './components/Contact/Contact';
 
+// import { GoogleApiWrapper } from 'google-maps-react';
+
 const RoutesDirectory = () => {
   return (
     <Routes>
