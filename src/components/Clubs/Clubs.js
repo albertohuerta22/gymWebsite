@@ -64,5 +64,5 @@ export const Clubs = (props) => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyB5W1OaTrlBLjdOBFJF6PVGTfkdzoZy2Hc',
+  apiKey: process.env.REACT_APP_GOOGLE_KEY,
 })(Clubs);
