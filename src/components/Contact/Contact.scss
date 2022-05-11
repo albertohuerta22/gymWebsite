@@ -4,10 +4,13 @@
   display: flex;
   // flex-direction: row;
   overflow: hidden;
-
-  img {
-    // flex: 1;
-    height: 50rem;
+  .img-container {
+    width: 60%;
+    overflow: hidden;
+    img {
+      // flex: 1;
+      height: 50rem;
+    }
   }
 
   .form {

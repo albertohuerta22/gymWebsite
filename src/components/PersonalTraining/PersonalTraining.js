@@ -28,8 +28,8 @@ const PersonalTraining = () => {
       </div>
       <div className="featured-trainers">
         <Carousel variant="light">
-          {PersonalTrainers.map((trainer) => (
-            <Carousel.Item>
+          {PersonalTrainers.map((trainer, idx) => (
+            <Carousel.Item key={idx}>
               <img src={trainer.Picture} alt="First slide" />
               <div className="overlay"></div>
               <div>

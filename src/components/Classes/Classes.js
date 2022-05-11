@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Classes.scss';
 const Classes = () => {
   return (
     <>
@@ -7,25 +7,14 @@ const Classes = () => {
         <h1>Take a look at our classes!</h1>
 
         {/*requires backend map to relfect avail classes for day */}
-        <div className="class-container">
-          <div className="time">Monday 0800</div>
-          <div className="class-type">Cardio Dance</div>
-        </div>
-        <div className="class-container">
-          <div className="time">Monday 0800</div>
-          <div className="class-type">Cardio Dance</div>
-        </div>
-        <div className="class-container">
-          <div className="time">Monday 0800</div>
-          <div className="class-type">Cardio Dance</div>
-        </div>
-        <div className="class-container">
-          <div className="time">Monday 0800</div>
-          <div className="class-type">Cardio Dance</div>
-        </div>
-        <div className="class-container">
-          <div className="time">Monday 0800</div>
-          <div className="class-type">Cardio Dance</div>
+        <div className="calendar-container">
+          <div className="box">M</div>
+          <div className="box">T</div>
+          <div className="box">W</div>
+          <div className="box">Th</div>
+          <div className="box">F</div>
+          <div className="box">S</div>
+          <div className="box">Su</div>
         </div>
       </div>
     </>

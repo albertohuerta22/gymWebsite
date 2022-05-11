@@ -1,4 +1,6 @@
 .footer {
+  display: flex;
+  // flex-direction: row;
   background: #000;
   color: white;
   padding: 3em;
@@ -7,4 +9,28 @@
 
   background-color: #000;
   color: white;
+
+  .links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .about-container {
+    }
+    .brand-container {
+      margin-left: 10rem;
+    }
+  }
+  .social-container {
+    justify-content: right;
+    width: 50%;
+    justify-content: space-between;
+    .social-contents {
+      align-items: right;
+      text-align: right;
+      .social-link {
+        margin-right: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
 }
