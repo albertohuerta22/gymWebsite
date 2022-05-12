@@ -5,10 +5,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import locationReducer from './locations';
 import trainerReducer from './trainers';
+import classReducer from './classes';
 
 const reducer = combineReducers({
   PersonalTrainers: trainerReducer,
   Locations: locationReducer,
+  Classes: classReducer,
 });
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))

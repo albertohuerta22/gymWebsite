@@ -1,5 +1,7 @@
 import React from 'react';
-
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import './Contact.scss';
 
 const Contact = () => {
@@ -11,8 +13,33 @@ const Contact = () => {
           alt="wellness"
         ></img>
       </div>
-
-      <form className="form">
+      <div className="form">
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>First Name</Form.Label>
+            <Form.Control type="email" placeholder="Enter First Name" />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Last Name</Form.Label>
+            <Form.Control type="email" placeholder="Enter Last Name" />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Comment</Form.Label>
+            <Form.Control as="textarea" rows={3} />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
+      {/* <form className="form">
         <label for="fname">First Name: </label>
         <input type="text"></input>
         <label for="lname">Last Name: </label>
@@ -31,7 +58,7 @@ const Contact = () => {
           <option value="general">General</option>
         </select>
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
     </div>
   );
 };

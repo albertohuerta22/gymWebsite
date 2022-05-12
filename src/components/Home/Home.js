@@ -5,6 +5,7 @@ import Pic2 from '../../assets/gymClasses.jpg';
 import Pic3 from '../../assets/personaltrainer2.0.jpg';
 
 import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button';
 
 const Home = () => {
   return (
@@ -58,7 +59,7 @@ const Home = () => {
           We provide the dicipline and attention needed to reach your personal
           goals.
         </p>
-        <button>Our Story</button>
+        <Button variant="dark">Our Story</Button>
       </div>
     </div>
   );
