@@ -13,99 +13,109 @@ const Classes = () => {
 
   useEffect(() => {
     dispatch(setSingleClass(Classes.id));
+    // dispatch(filteredClick());
   }, []);
 
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredClick = (value) => {
-    if (value === '') {
-      setSearchTerm(
-        Classes.map((day, idx) => (
-          <Accordion.Item activeKey={idx}>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
-        ))
-      );
-    } else if (value === 'M') {
+    if (value === 'M') {
       setSearchTerm(
         Classes.filter((day) => day.Day === 'Monday').map((day, idx) => (
-          <Accordion.Item activeKey={idx}>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
+          <Accordion>
+            <Accordion.Item activeKey={idx}>
+              <Accordion.Header>{day.Name}</Accordion.Header>
+              <Accordion.Body>{day.Description}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
       );
     } else if (value === 'T') {
       setSearchTerm(
         Classes.filter((day) => day.Day === 'Tuesday').map((day, idx) => (
-          <Accordion.Item eventKey={idx}>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
+          <Accordion>
+            <Accordion.Item activeKey={idx}>
+              <Accordion.Header>{day.Name}</Accordion.Header>
+              <Accordion.Body>{day.Description}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
       );
     } else if (value === 'W') {
       setSearchTerm(
         Classes.filter((day) => day.Day === 'Wednesday').map((day, idx) => (
-          <Accordion.Item activeKey={idx}>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
+          <Accordion>
+            <Accordion.Item activeKey={idx}>
+              <Accordion.Header>{day.Name}</Accordion.Header>
+              <Accordion.Body>{day.Description}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
       );
     } else if (value === 'Th') {
       setSearchTerm(
         Classes.filter((day) => day.Day === 'Thursday').map((day, idx) => (
-          <Accordion.Item activeKey={idx}>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
+          <Accordion>
+            <Accordion.Item activeKey={idx}>
+              <Accordion.Header>{day.Name}</Accordion.Header>
+              <Accordion.Body>{day.Description}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
       );
     } else if (value === 'F') {
       setSearchTerm(
-        Classes.filter((day) => day.Day === 'Friday').map((day) => (
-          <Accordion.Item>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
+        Classes.filter((day) => day.Day === 'Friday').map((day, idx) => (
+          <Accordion>
+            <Accordion.Item activeKey={idx}>
+              <Accordion.Header>{day.Name}</Accordion.Header>
+              <Accordion.Body>{day.Description}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
       );
     } else if (value === 'S') {
       setSearchTerm(
         Classes.filter((day) => day.Day === 'Saturday').map((day, idx) => (
-          <Accordion.Item activeKey={idx}>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
+          <Accordion>
+            <Accordion.Item activeKey={idx}>
+              <Accordion.Header>{day.Name}</Accordion.Header>
+              <Accordion.Body>{day.Description}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
       );
     } else if (value === 'Su') {
       setSearchTerm(
         Classes.filter((day) => day.Day === 'Sunday').map((day, idx) => (
-          <Accordion.Item activeKey={idx}>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
+          <Accordion>
+            <Accordion.Item activeKey={idx}>
+              <Accordion.Header>{day.Name}</Accordion.Header>
+              <Accordion.Body>{day.Description}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
       );
     } else if (value === 'All') {
       setSearchTerm(
         Classes.map((day, idx) => (
-          <Accordion.Item activeKey={idx}>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
+          <Accordion>
+            <Accordion.Item activeKey={idx}>
+              <Accordion.Header>{day.Name}</Accordion.Header>
+              <Accordion.Body>{day.Description}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
       );
     } else {
       setSearchTerm(
         Classes.map((day, idx) => (
-          <Accordion.Item activeKey={idx}>
-            <Accordion.Header>{day.Name}</Accordion.Header>
-            <Accordion.Body>{day.Description}</Accordion.Body>
-          </Accordion.Item>
+          <Accordion>
+            <Accordion.Item activeKey={idx}>
+              <Accordion.Header>{day.Name}</Accordion.Header>
+              <Accordion.Body>{day.Description}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         ))
       );
     }
@@ -169,7 +179,18 @@ const Classes = () => {
             All
           </div>
         </div>
-        <div className="content-container">{searchTerm}</div>
+        <div className="content-container">
+          {searchTerm === ''
+            ? Classes.map((day, idx) => (
+                <Accordion>
+                  <Accordion.Item activeKey={idx}>
+                    <Accordion.Header>{day.Name}</Accordion.Header>
+                    <Accordion.Body>{day.Description}</Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+              ))
+            : searchTerm}
+        </div>
       </div>
     </>
   );

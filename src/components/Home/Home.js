@@ -51,7 +51,11 @@ const Home = () => {
         </Carousel>
       </div>
       <div className="classes-container">
-        <p>Curious About Our Classes?</p>
+        <div className="classes-container-left">Curious About Our Classes?</div>
+        <div className="classes-container-right">
+          Classes designed for your needs and your schedule. We have an array of
+          instructors ready to prepare you for your next chapter.
+        </div>
       </div>
       <div className="story">
         <h1>Above The Rest</h1>

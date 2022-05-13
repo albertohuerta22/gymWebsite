@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Oswald:wght@300&display=swap');
+
 .home-container {
   // position: relative;
   display: block;
@@ -27,7 +29,7 @@
   .classes-container {
     display: flex;
 
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -39,6 +41,26 @@
     background-color: #000;
     color: white;
     border-width: 10px;
+    .classes-container-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      font-family: 'Koulen', cursive;
+      font-family: 'Oswald', sans-serif;
+    }
+    .classes-container-right {
+      display: flex;
+      padding: 2rem;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 80%;
+      border-left: solid 2px white;
+      font-family: 'Koulen', cursive;
+      font-family: 'Oswald', sans-serif;
+    }
   }
 
   .story {
@@ -62,18 +84,17 @@
     display: flex;
     // flex: 2;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // object-position: center;
+    // align-items: center;
     width: 100%;
     height: 30rem;
     color: white;
     overflow: hidden;
 
     .caption {
-      // position: absolute;
-      // justify-content: center;
-      // align-items: center;
-      // color: white;
+      // display: flex;
+      // flex-direction: column;
       top: 20rem;
       left: 20rem;
       bottom: auto;
