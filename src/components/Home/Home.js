@@ -61,7 +61,7 @@ const Home = () => {
         <h1>Above The Rest</h1>
         <p>
           We provide the dicipline and attention needed to reach your personal
-          goals.
+          goals. <span className="bolded">Find out more.</span>
         </p>
         <Button variant="dark">Our Story</Button>
       </div>

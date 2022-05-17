@@ -1,10 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSingleMessage, addSingleMessage } from '../../store/contact';
+
+// import { Link, useNavigate } from 'react-router-dom';
+//styling
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
+// import FloatingLabel from 'react-bootstrap/FloatingLabel';
+
 import './Contact.scss';
 
-const Contact = () => {
+const Contact = (props) => {
+  // const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const Messages = useSelector((state) => state.Messages) || [];
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [comment, setComment] = useState('');
+
+  useEffect(() => {
+    dispatch(setSingleMessage(Messages.id));
+    // dispatch(addSingleMessage());
+  }, []);
+
+  const submitMessage = (e) => {
+    e.preventDefault();
+    console.log('message submited');
+
+    dispatch(addSingleMessage(firstName, lastName, email, comment));
+  };
+
   return (
     <div className="contact-container">
       <div className="img-container">
@@ -17,48 +44,52 @@ const Contact = () => {
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>First Name</Form.Label>
-            <Form.Control type="email" placeholder="Enter First Name" />
+            <Form.Control
+              type="text"
+              placeholder="Enter First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Last Name</Form.Label>
-            <Form.Control type="email" placeholder="Enter Last Name" />
+            <Form.Control
+              type="text"
+              placeholder="Enter Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Comment</Form.Label>
-            <Form.Control as="textarea" rows={3} />
+            <Form.Control
+              as="textarea"
+              rows={3}
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button
+            variant="primary"
+            type="submit"
+            onClick={(e) => submitMessage(e)}
+          >
             Submit
           </Button>
         </Form>
       </div>
-      {/* <form className="form">
-        <label for="fname">First Name: </label>
-        <input type="text"></input>
-        <label for="lname">Last Name: </label>
-        <input type="text"></input>
-        <label for="email">Email: </label>
-        <input type="text"></input>
-        <label for="phone">Phone: </label>
-        <input type="text"></input>
-        <label for="subject">Subject: </label>
-
-        <select name="subject">
-          <option value="">Select your option</option>
-          <option value="membership">Membersip</option>
-          <option value="billing">Billing</option>
-          <option value="visit">Visit</option>
-          <option value="general">General</option>
-        </select>
-        <button type="submit">Submit</button>
-      </form> */}
     </div>
   );
 };
