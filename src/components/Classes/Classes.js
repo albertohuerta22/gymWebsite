@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSingleClass } from '../../store/classes';
-import { Link, useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import './Classes.scss';
 import Accordion from 'react-bootstrap/Accordion';
 
 const Classes = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const Classes = useSelector((state) => state.Classes) || [];

@@ -37,17 +37,14 @@ export const setSingleMessage = (id) => {
 export const addSingleMessage = (firstName, lastName, email, comment) => {
   return async (dispatch) => {
     try {
-      const { data: message } = await supabase.from('Messages').insert(
-        [
-          {
-            FirstName: firstName,
-            LastName: lastName,
-            Email: email,
-            Comment: comment,
-          },
-        ]
-        // { upsert: true }
-      );
+      const { data: message } = await supabase.from('Messages').insert([
+        {
+          FirstName: firstName,
+          LastName: lastName,
+          Email: email,
+          Comment: comment,
+        },
+      ]);
 
       dispatch(_addMessage(message));
     } catch (error) {

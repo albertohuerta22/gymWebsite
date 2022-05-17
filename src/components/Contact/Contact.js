@@ -26,7 +26,7 @@ const Contact = (props) => {
   }, []);
 
   const submitMessage = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log('message submited');
 
     dispatch(addSingleMessage(firstName, lastName, email, comment));

@@ -15,7 +15,7 @@ const _setClass = (classes) => {
 export const setSingleClass = (id) => {
   return async (dispatch) => {
     try {
-      let { data: Classes, error } = await supabase.from('Classes').select('*');
+      let { data: Classes } = await supabase.from('Classes').select('*');
       dispatch(_setClass(Classes));
     } catch (error) {
       console.log(error);

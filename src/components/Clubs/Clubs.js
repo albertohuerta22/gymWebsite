@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import { setSingleLocation } from '../../store/locations';
 
@@ -10,14 +10,13 @@ import './Clubs.scss';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 export const Clubs = (props) => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const Locations = useSelector((state) => state.Locations) || [];
 
   useEffect(() => {
     dispatch(setSingleLocation(Locations.id));
-  }, []);
+  }, [Locations.id, dispatch]);
 
   return (
     <div className="map-container">

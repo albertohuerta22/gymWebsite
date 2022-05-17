@@ -15,9 +15,7 @@ const _setLocation = (locations) => {
 export const setSingleLocation = (id) => {
   return async (dispatch) => {
     try {
-      let { data: Locations, error } = await supabase
-        .from('Locations')
-        .select('*');
+      let { data: Locations } = await supabase.from('Locations').select('*');
       dispatch(_setLocation(Locations));
     } catch (error) {
       console.log(error);

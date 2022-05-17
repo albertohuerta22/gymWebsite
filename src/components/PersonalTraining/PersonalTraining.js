@@ -1,22 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import { setSingleTrainer } from '../../store/trainers';
-import { supabase } from '../../supabaseClient';
+// import { supabase } from '../../supabaseClient';
 
 import './PersonalTraining.scss';
 import Carousel from 'react-bootstrap/Carousel';
 
 const PersonalTraining = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const PersonalTrainers = useSelector((state) => state.PersonalTrainers) || [];
 
   useEffect(() => {
     dispatch(setSingleTrainer(PersonalTrainers.id));
-  }, []);
+  }, [PersonalTrainers.id, dispatch]);
 
   console.log(PersonalTrainers);
 

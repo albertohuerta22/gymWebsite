@@ -17,7 +17,7 @@ const _setTrainer = (trainers) => {
 export const setSingleTrainer = (id) => {
   return async (dispatch) => {
     try {
-      let { data: PersonalTrainers, error } = await supabase
+      let { data: PersonalTrainers } = await supabase
         .from('PersonalTrainers')
         .select('*');
 

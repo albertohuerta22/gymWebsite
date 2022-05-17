@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
+  // const [nav, setNav] = useState(false);
   const [color, setColor] = useState(false);
 
-  const handleClick = () => setNav(!nav);
+  // const handleClick = () => setNav(!nav);
   const changeColor = () => {
     window.scrollY ? setColor(true) : setColor(false);
   };
