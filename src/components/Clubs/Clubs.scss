@@ -7,6 +7,7 @@
   // align-items: center;
   // justify-content: center;
   // border: solid 2px blue;
+  overflow: scroll;
 
   .map {
     flex: 1;
@@ -25,6 +26,7 @@
     border: solid 2px #000;
     border-left: solid 4px #000;
     margin-left: 3rem;
+    overflow: scroll;
 
     .map-title {
       font-weight: bold;
@@ -32,11 +34,13 @@
       margin-top: 2rem;
       margin-bottom: 2rem;
       margin-left: 2rem;
+      overflow: scroll;
     }
 
     .map-content {
       width: 80%;
       margin-left: 2rem;
+      overflow: scroll;
     }
   }
 }

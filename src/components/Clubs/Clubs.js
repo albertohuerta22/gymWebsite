@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { useNavigate } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ import { setSingleLocation } from '../../store/locations';
 import Accordion from 'react-bootstrap/Accordion';
 import './Clubs.scss';
 
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 
 export const Clubs = (props) => {
   const dispatch = useDispatch();
@@ -17,6 +17,12 @@ export const Clubs = (props) => {
   useEffect(() => {
     dispatch(setSingleLocation(Locations.id));
   }, [Locations.id, dispatch]);
+
+  const [window, setWindow] = useState(false);
+
+  const changeWindow = (location) => {
+    setWindow(false);
+  };
 
   return (
     <div className="map-container">
@@ -40,7 +46,15 @@ export const Clubs = (props) => {
                 lng: parseFloat(location.Lng),
               }}
               key={idx}
-            />
+              // clickable
+              // onClick={changeWindow}
+            >
+              <InfoWindow>
+                <div className="infowindow-container">
+                  <p>Hello World</p>
+                </div>
+              </InfoWindow>
+            </Marker>
           ))}
         </Map>
       </div>
